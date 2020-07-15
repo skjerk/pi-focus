@@ -9,12 +9,17 @@ Very useful on e.g. OctoPrint, where autofocus is not desirable
 The easiest way to build the application is to cross-compile it from a
 desktop PC
 
-Go can very easily cross-compile, and to build the application for the
-Raspberry Pi, use the following command on your PC or Mac:
+Go can very easily cross-compile to the Raspberry Pi and to build pi-focus you need to install the Go tools on your pc/mac:
+
+[https://golang.org/doc/install](https://golang.org/doc/install)
+
+To to build the application for the
+Raspberry Pi, clone the pi-focus files to your machine and in the pi-focus direcory use the following command:
 
 `env GOOS=linux GOARCH=arm GOARM=7 go build`
 
 When the compilation is done, you can transfer the application to your Pi using the deploy.sh script.
+
 You will need to edit the deploy-script so that it uses the correct IP-address of your Pi
 
 ## Deployment
@@ -29,7 +34,7 @@ Now you can ssh to your Pi and start the application:
 
 `./pi-focus`
 
-When the application is running, you can enter the url <ip-of-raspberry-pi>:1080 in your browser and then control the focus of your camera.
+When the application is running, you can enter the url <ip-of-raspberry-pi>:1080 (if using octopi, try octopi.local:1080) in your browser and then control the focus of your camera.
 
 ## Setting up automatic start
 
