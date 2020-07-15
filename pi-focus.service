@@ -1,0 +1,14 @@
+[Unit]
+Description=Pi-focus webcam manual focus utility
+After=network.target
+
+[Service]
+ExecStart=/home/pi/pi-focus
+WorkingDirectory=/home/pi
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

@@ -31,4 +31,15 @@ Now you can ssh to your Pi and start the application:
 
 When the application is running, you can enter the url <ip-of-raspberry-pi>:1080 in your browser and then control the focus of your camera.
 
-I use OctoPi to view the stream from the camera, but any streaming application should do the job.
+## Setting up automatic start
+
+To enable pi-focus to always run on your pi, a systemd definition is provided.
+You can activate it like this:
+```
+cd ~
+sudo cp pi-focus.service /etc/systemd/system
+sudo systemctl start pi-focus.service
+sudo systemctl enable pi-focus
+```
+
+This will ensure that pi-focus always runs when you boot up your Pi.
