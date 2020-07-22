@@ -26,10 +26,10 @@
         Current value: <span id="currentvalue">{{.Focus}}</span>
 
         <div>
-        To set this focus value in your OctoPi as default, add the following line to octopi.config:
+        To set this focus value in your OctoPi as default, add the following lines to <span class="monospace">/etc/rc.local</span> just before the exit line:
             <div class="terminal">
-                v4l2-ctl --set-ctrl=focus_auto=<span id="autofocusvalue">{{.AutofocusValue}}</span><br/>
-                v4l2-ctl --set-ctrl=focus_absolute=<span id="pivalue">{{.Focus}}</span>
+                /usr/bin/v4l2-ctl --set-ctrl=focus_auto=<span id="autofocusvalue">{{.AutofocusValue}}</span><br/>
+                /usr/bin/v4l2-ctl --set-ctrl=focus_absolute=<span id="pivalue">{{.Focus}}</span>
             </div>
         </div>
     </div>
@@ -46,6 +46,10 @@
         .switch {
             vertical-align: middle;
             margin-top: 5px;
+        }
+        .monospace {
+            font-family: monospace;
+            background-color: lightgray;
         }
     </style>
 

@@ -7,7 +7,7 @@ ARM_VERSION=7
 # Executable name is assumed to be same as current directory name
 # Other files or direcories are specified in OTHER
 EXECUTABLE=${PWD##*/} 
-OTHER="templates public"
+OTHER="templates public pi-focus.service"
  
 echo "Building for Raspberry Pi..."
 env GOOS=linux GOARCH=arm GOARM=$ARM_VERSION go build
